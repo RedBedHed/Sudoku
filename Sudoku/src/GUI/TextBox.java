@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TextBox extends JFrame{
+public class TextBox extends JDialog {
 
     private final JPanel textPanel;
     private final JTextArea textArea;
@@ -14,6 +14,7 @@ public class TextBox extends JFrame{
 
     public TextBox(final JFrame frame, final String path) {
 
+        super(frame);
         setResizable(false);
         setVisible(true);
         this.textPanel = new JPanel();
@@ -24,7 +25,7 @@ public class TextBox extends JFrame{
                 textArea.append(reader.nextLine() + "\n");
             }
             reader.close();
-        }catch (IOException ex){
+        } catch (IOException ex){
             ex.printStackTrace();
         }
         this.scrollPane = new JScrollPane(textArea);
@@ -32,7 +33,6 @@ public class TextBox extends JFrame{
         this.textArea.setEditable(false);
         this.textPanel.add(scrollPane);
         add(textPanel, BorderLayout.CENTER);
-        setLocationRelativeTo(frame);
         pack();
 
     }

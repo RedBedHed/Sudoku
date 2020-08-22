@@ -388,7 +388,7 @@ public class Table {
             assignSelectionColor();
             assignSelectionIcon();
             setSize(SELECTION_PANEL_DIMENSION);
-            addMouseListener(new MouseListener() {
+            addMouseListener(new MouseAdapter() {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -411,26 +411,6 @@ public class Table {
                         isRightTileClick = false;
                         congratulateWinner();
                     }
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-
                 }
 
             });
@@ -602,7 +582,7 @@ public class Table {
             setPreferredSize(TILE_PANEL_DIMENSION);
             assignTileColor();
             assignTileIcon();
-            addMouseListener(new MouseListener() {
+            addMouseListener(new MouseAdapter() {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -617,26 +597,6 @@ public class Table {
                         }
 
                     });
-
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
 
                 }
 
